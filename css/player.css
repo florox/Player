@@ -1,0 +1,105 @@
+*{margin:0px; padding: 0px;}
+
+body{background: #2DA690;}
+
+.color-1{ background: #294273; }
+.color-2{ background: #206E8C; }
+.color-3{ background: #2DA690; }
+.color-3-font{color: #2DA690;}
+.color-4{ background: #F29441; }
+.color-5{ background: #D94B2B; }
+.color-white-font{color: white;}
+
+.shadow{-moz-box-shadow:    0px 0px 3px 3px #ccc; -webkit-box-shadow: 0px 0px 3px 3px #ccc; box-shadow: 0px 0px 3px 3px #ccc;}
+
+div#player-control-main{position:absolute;}
+div#player-control-main i{font-size: 55px;}
+
+div#overlay-start{width: 30px; height: 30px; position:absolute; top:0; right:0;}
+div#overlay-area{position:absolute; top:0; right:0; overflow:hidden;}
+
+div#overlay-area.start{
+	-webkit-animation:overlayStart 1s infinite;
+	-webkit-animation-iteration-count: 1; 
+	-webkit-animation-fill-mode: forwards;
+}
+div#overlay-area.start .tile{display:block;}
+
+div#overlay-area.stop{
+	-webkit-animation:overlayClose 1s infinite;
+	-webkit-animation-iteration-count: 1; 
+	-webkit-animation-fill-mode: forwards;
+}
+div#overlay-close,
+div#overlay-area.stop div#overlay-close{display:none;}
+div#overlay-area.start #overlay-close{display:block; position:absolute; top:0; right:0;}
+
+#tile-container, .tile{float: left;}
+#tile-container:after{clear: both;}
+.tile{width:50px; height:50px; display: none; margin: 10px; cursor: pointer}
+.tile i.fa{font-size: 40px; margin: 6px auto auto 6px;}
+
+@-webkit-keyframes overlayStart {
+	from {opacity: 0;}
+	to {opacity: 0.8; width: 100%; height: 100%}
+}
+@-webkit-keyframes overlayClose {
+	from {width: 100%; height: 100%}
+	to {width: 0px; height: 0px}
+}
+
+/*
+#menu-area{width:40px; height:40px; position:absolute; overflow: hidden; top:0; right:0; opacity: 0.3}
+#menu-area:hover{
+	animation:mymove 1s infinite;
+	-webkit-animation:mymove 1s infinite;
+	animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1; 
+	-webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+#menu-area-close{width:30px; height:30px; position:absolute; top:0; right:0;}
+#menu-area-close:hover{--webkit-animation: menuClose 0.2 infinite}
+
+#tile-container, .tile{float: left;}
+#tile-container:after{clear: both;}
+
+#menu-area-close i{display: none;}
+.tile{width:50px; height:50px; display: none; margin: 10px; cursor: pointer}
+.tile i.fa{color:white; font-size: 40px; margin: 6px auto auto 6px;}
+
+
+.tile:hover{
+	animation:tileAnimate 0.2s infinite;
+	-webkit-animation:tileAnimate 0.2s infinite; 
+	animation-iteration-count: 1;
+	-webkit-animation-iteration-count: 1; 
+	-webkit-animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
+}
+
+@keyframes tileAnimate { 0%{} 50%{width: 60px;height: 60px;} 100%{width: 50px;height: 50px;} }
+@-webkit-keyframes tileAnimate { 0%{} 50%{width: 60px;height: 60px;} 100%{width: 50px;height: 50px;} }
+
+#menu-area:hover .tile{
+	display: block;
+}
+
+#tileAnimate:hover{
+	-webkit-transform: translate(-300px, -150px);  
+    opacity:1;
+}
+
+
+
+
+/*
+{
+0%   {top:0px;}
+25%  {top:200px;}
+50%  {top:100px;}
+75%  {top:200px;}
+100% {top:0px;}
+}
+*/
